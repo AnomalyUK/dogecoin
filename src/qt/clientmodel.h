@@ -51,6 +51,7 @@ public:
 
     int getHashrate() const;
     double GetDifficulty() const;
+    double GetNextReward() const;
 
     QDateTime getLastBlockDate() const;
 

@@ -190,6 +190,13 @@ double ClientModel::GetDifficulty() const
     return dDiff;
 }
 
+double ClientModel::GetNextReward() const
+{
+  int height = pindexBest->nHeight;
+  uint256 hash = pindexBest->GetBlockHash();
+  return (double)GetSubsidy(height+1,hash);
+}
+
 QDateTime ClientModel::getLastBlockDate() const
 {
     return QDateTime::fromTime_t(pindexBest->GetBlockTime());

@@ -618,6 +618,9 @@ void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
         tooltip += tr("Last received block was generated %1.").arg(text);
     }
 
+    tooltip += QString("<br>");
+    tooltip += tr("Next block reward %1").arg(BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), clientModel->GetNextReward(), true));
+
     // Don't word-wrap this (fixed-width) tooltip
     tooltip = QString("<nobr>") + tooltip + QString("</nobr>");
 
